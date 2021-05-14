@@ -1,0 +1,31 @@
+@import "../../../variables";
+@import "../../utils/typography";
+
+.gallery__categories {
+    display: flex;
+    justify-content: center;
+
+    .categories__items {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        .category {
+            border-bottom: 2px solid transparent;
+            transition: border 0.3s ease;
+            cursor: pointer;
+
+            &.category__current {
+                border-bottom: 2px solid $red-dark;
+            }
+
+            p {
+                color: #53576f;
+                margin: 0 12px;
+                padding: 12px 0;
+
+                @include typography(16px, normal, 400, 24px, 0, center);
+            }
+        }
+    }
+}

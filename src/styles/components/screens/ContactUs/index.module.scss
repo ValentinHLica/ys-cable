@@ -1,0 +1,52 @@
+@import "../../../variables";
+@import "../../utils/responsive";
+@import "../../utils/typography";
+
+.container {
+    h1 {
+        margin-bottom: 16px;
+        padding-top: 40px;
+
+        @include typography(40px, normal, 600, 62px, -1.5px, center);
+    }
+    .container__wrapper {
+        margin: 24px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 24px;
+        column-gap: 24px;
+
+        @include responsive(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .container__card {
+            border-radius: 4px;
+            background-color: $red;
+            color: white;
+            padding: 20px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            li {
+                margin: 10px;
+                overflow: hidden;
+
+                @include responsive(tablet) {
+                    font-size: 1.2em;
+                }
+
+                svg {
+                    margin-right: 20px;
+                }
+            }
+
+            &.social {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

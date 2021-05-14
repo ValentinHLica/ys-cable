@@ -1,0 +1,62 @@
+@import "../../../variables";
+@import "../../utils/responsive";
+@import "../../utils/typography";
+
+.gallery {
+    .gallery__container {
+        .gallery__title {
+            margin-bottom: 16px;
+            padding-top: 40px;
+
+            @include typography(40px, normal, 600, 62px, -1.5px, center);
+        }
+
+        .gallery__items {
+            column-count: 1;
+            column-gap: 1em;
+
+            @include responsive(mobile-large) {
+                column-count: 2;
+            }
+
+            @include responsive(tablet) {
+                column-count: 3;
+            }
+
+            @include responsive(pc-small) {
+                column-count: 4;
+            }
+
+            li {
+                background-color: #eee;
+                display: inline-block;
+                margin: 0 0 1em;
+                width: 100%;
+                cursor: pointer;
+
+                div {
+                    display: flex !important;
+                    position: unset !important;
+                }
+
+                .item__image {
+                    width: 100% !important;
+                    height: 100% !important;
+                    position: unset !important;
+                }
+            }
+        }
+
+        .gallery__modal {
+            img,
+            video {
+                max-height: 90vh;
+                max-width: 90vw;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+        }
+    }
+}

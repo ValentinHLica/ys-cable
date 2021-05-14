@@ -1,0 +1,50 @@
+@import "../variables";
+@import "../components/utils/typography";
+@import "../components/utils/responsive";
+
+.container {
+    padding: 40px 0;
+
+    h3 {
+        margin-bottom: 24px;
+
+        @include typography(38px, normal, 600, 46px, -1.5px, left);
+    }
+
+    .container__content {
+        display: flex;
+        flex-direction: column;
+
+        @include responsive(tablet) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        p {
+            color: #53576f;
+            flex: 2;
+            padding-right: 20px;
+
+            @include typography(18px, normal, 400, 26px, -0.3px, left);
+        }
+
+        .container__button {
+            border-radius: 100px;
+            background-color: $red-dark;
+            flex: 1;
+            margin-top: 20px;
+
+            @include responsive(tablet) {
+                margin-top: 0;
+            }
+
+            a {
+                display: block;
+                color: white;
+                padding: 20px 40px;
+
+                @include typography(18px, normal, 400, 26px, -0.3px, center);
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@import "../../variables";
+@import "../utils/responsive";
+
+.drawer__background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #0000005b;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1;
+
+    &___open {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    @include responsive(pc-small) {
+        display: none;
+    }
+}
+
+.drawer {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 320px;
+    background-color: $red;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+
+    &___open {
+        transform: translateY(0);
+    }
+
+    @include responsive(pc-small) {
+        display: none;
+    }
+
+    li {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $red-dark;
+        }
+
+        &:first-child {
+            display: flex;
+            align-items: flex-end;
+            padding: 15px 20px;
+            font-size: 20px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        a {
+            padding: 15px 20px;
+        }
+    }
+}

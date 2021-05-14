@@ -1,0 +1,65 @@
+@import "../../../../variables";
+@import "../../../utils/responsive";
+@import "../../../utils/typography";
+
+.container {
+    .container__slog {
+        .slogan__content {
+            padding: 40px 16px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+
+            @include responsive(mobile-large) {
+                max-width: 441px;
+            }
+
+            @include responsive(tablet) {
+                max-width: 441px;
+                align-items: center;
+            }
+
+            @include responsive(pc-small) {
+                max-width: 541px;
+            }
+
+            .content__title {
+                @include typography(38px, normal, 600, 46px, -1.5px, center);
+
+                @include responsive(mobile-large) {
+                    font-size: 50px;
+                    line-height: 50px;
+                    letter-spacing: -1.4px;
+                }
+            }
+
+            .content__desc {
+                margin: 16px 0 24px;
+
+                @include typography(16px, normal, 400, 24px, 0, center);
+
+                @include responsive(mobile-large) {
+                    font-size: 18px;
+                    line-height: 26px;
+                    letter-spacing: -0.3px;
+                }
+
+                @include responsive(pc-small) {
+                    font-size: 20px;
+                    line-height: 28px;
+                    letter-spacing: -0.4px;
+                    margin-bottom: 40px;
+                    margin-top: 24px;
+                }
+            }
+
+            .content__button {
+                background-color: $red;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 100px;
+            }
+        }
+    }
+}

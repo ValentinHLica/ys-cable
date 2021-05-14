@@ -1,0 +1,73 @@
+@import "../../../../variables";
+@import "../../../utils/responsive";
+@import "../../../utils/typography";
+
+.about_us {
+    .about_us__container {
+        .container__main__content {
+            margin-bottom: 40px;
+
+            .main__content__title {
+                margin-bottom: 24px;
+
+                @include typography(45px, normal, 600, 46px, -1.5px, center);
+            }
+
+            .main__content__desc {
+                color: #53576f;
+
+                @include typography(18px, normal, 400, 26px, -0.3px, center);
+            }
+        }
+
+        .about_us__content {
+            padding: 40px 0;
+            max-width: 956px;
+            margin: auto;
+
+            .about_us__title {
+                margin-bottom: 24px;
+
+                @include typography(38px, normal, 600, 46px, -1.5px, center);
+            }
+
+            .about_us__desc {
+                color: #53576f;
+
+                @include typography(18px, normal, 400, 26px, -0.3px, center);
+            }
+        }
+
+        .container__items {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            column-gap: 16px;
+            row-gap: 16px;
+            padding-bottom: 20px;
+
+            @include responsive(mobile-large) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .container__item {
+                display: flex;
+                align-items: center;
+
+                span {
+                    padding: 10px;
+                    border-radius: 50%;
+                    background: #b02c31;
+                    color: white;
+                    font-size: 20px;
+                    margin-right: 16px;
+                }
+
+                p {
+                    color: #53576f;
+
+                    @include typography(16px, normal, 400, 24px, 0, left);
+                }
+            }
+        }
+    }
+}
